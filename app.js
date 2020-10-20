@@ -13,8 +13,9 @@ const render = require("./lib/htmlRenderer.js");
 const Choice = require("inquirer/lib/objects/choice");
 const employees = [];
 
-//Inquirer team prompts:
+// questions function
 function questions() {
+    // inquirer prompts for repeat
     inquirer.prompt([{
         message: "Enter team member's name",
         name: "name"
@@ -23,8 +24,8 @@ function questions() {
         type: "list",
         message: "What is the role of the team member you would like to add?",
         choices: [
-            "Intern",
             "Manager",
+            "Intern",
             "Engineer"
         ],
         name: "role"
@@ -37,6 +38,8 @@ function questions() {
         message: "Enter team member's email address",
         name: "email"
     }])
+
+        // different credentials per role
         .then(function ({ name, role, id, email }) {
             let roleInfo = "";
             if (roleInfo === Engineer) {
@@ -49,7 +52,7 @@ function questions() {
                 roleInfo = "office phone number"
             }
             inquirer.prompt([{
-                message: "Enter team member's role information.",
+                message: "Enter the team member's role description",
                 name: "roleInfo"
             },
             {
@@ -57,6 +60,8 @@ function questions() {
                 message: "Would you like to add another team member?",
                 name: "moreMembers",
             }])
+
+                // function to add more team members
                 .then(function ({ roleInfo, moreMembers }) {
                     let newMember;
                     if (role === "Engineer") {
@@ -70,6 +75,7 @@ function questions() {
                         employees.push (newMember)
                     };
 
+                    // if yes: repeat file, if no: render to html
                     if (moreMembers) {
                         questions () 
                     } else {
@@ -84,4 +90,4 @@ function questions() {
         })
 }
 
-questions ()
+questions ();
