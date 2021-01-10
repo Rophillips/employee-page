@@ -3,6 +3,9 @@
  
 ## Description
 A file for teams to showcase their information for a streamlined approach to group work, and access to critical employee information. This application allows you to enter information about yourself (as the manager) and your team of interns and engineers. After the application prompts you through a series of questions, it will automatically generate an HTML file with employee cards that contain the info you put in for your team. 
+
+## Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/prKwdTbvF9E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     
 ## Table of Contents
 Navigate through the README Using the Table of Contents: 
